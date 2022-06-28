@@ -7,7 +7,19 @@ Test the implementation of Queues in this directory
 __author__ = "Adam Karl"
 
 import random
-import PrioQueue
+import Queue, PrioQueue
+
+def testQueue():
+    """test the queue implementation"""
+    print("Testing Queue: items should print in increasing magnitude", flush=True)
+    q = Queue.Queue()
+    for i in range(20):
+        q.enqueue(i)
+    
+    while q.isEmpty() == False:
+        val = q.dequeue()
+        print(f"{val} ", end='')
+    print('\n')
 
 def testPrioQueue():
     """test the priority queue implementation"""
@@ -18,7 +30,6 @@ def testPrioQueue():
         rand = random.randint(0,99)
         pq.enqueue(rand, rand)
         
-    # print(pq)
     while pq.isEmpty() == False:
         val = pq.dequeue()
         print(f"{val} ", end='')
@@ -29,14 +40,14 @@ def testPrioQueue():
     for _ in range(20):
         rand = random.randint(0,99)
         pq.enqueue(rand, rand)
-        
-    # print(pq)
+
     while pq.isEmpty() == False:
         val = pq.dequeue()
         print(f"{val} ", end='')
     print('\n')
 
 def main():    
+    testQueue()
     testPrioQueue()
 
 if __name__ == "__main__":

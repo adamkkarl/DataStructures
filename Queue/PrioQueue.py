@@ -1,7 +1,7 @@
 #!/bin/python3
 
 """
-Implementation of a priority queue.
+Implementation of a generic priority queue.
 By default, a low priority value means a higher priority.
 """
 
