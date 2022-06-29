@@ -31,7 +31,15 @@ def testBST():
             print(f"{n} IS in bst")
         else:
             print(f"{n} IS NOT in bst")
-    print()
+            
+    print("\nTesting worst case BST")
+    bst = BinarySearchTree.BST()
+    for i in range(50):
+        bst.insert(i)
+    size = bst.size()
+    print(f"Size: {size}")
+    depth = bst.depth()
+    print(f"Depth: {depth}")
             
 def main():
     testBST()
