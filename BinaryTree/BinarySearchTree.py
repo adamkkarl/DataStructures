@@ -4,6 +4,8 @@
 Implementation of a basic binary search tree in python
 """
 
+import functools as fn
+
 __author__ = "Adam Karl"
 
 class BSTNode:
@@ -48,6 +50,23 @@ class BSTNode:
                 return False 
             else:
                 return self.right.search(val)
+    
+    def size(self):
+        size = 1
+        if self.left != None:
+            size += self.left.size()
+        if self.right != None:
+            size += self.right.size()
+        return size
+    
+    def depth(self):
+        left = 0
+        right = 0
+        if self.left != None:
+            left = self.left.depth()
+        if self.right != None:
+            right = self.right.depth()
+        return 1 + max(left, right) 
 
 class BST:
     def __init__(self):
@@ -69,3 +88,13 @@ class BST:
             return False
         else:
             return self.head.search(val)
+    
+    def size(self):
+        if self.head == None:
+            return 0
+        return self.head.size()
+    
+    def depth(self):
+        if self.head == None:
+            return 0
+        return self.head.depth()

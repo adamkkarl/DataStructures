@@ -17,6 +17,12 @@ def testBST():
     for _ in range(50):
         bst.insert(random.randint(0,99))
         
+    size = bst.size()
+    print(f"Size: {size}")
+    
+    depth = bst.depth()
+    print(f"Depth: {depth}")
+    
     print(bst)
         
     for _ in range(10):
@@ -25,8 +31,9 @@ def testBST():
             print(f"{n} IS in bst")
         else:
             print(f"{n} IS NOT in bst")
-
-def main():    
+    print()
+            
+def main():
     testBST()
     
 if __name__ == "__main__":
